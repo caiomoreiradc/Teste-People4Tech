@@ -5,4 +5,5 @@ Você foi designado para desenvolver uma pequena aplicação de gestão de taref
 2- Executar index.html
 
 Projeto feito com .NET e frontend js/bootstratp
+<br>
 ![App Screenshot](https://imgur.com/rWTWiBs.png)
