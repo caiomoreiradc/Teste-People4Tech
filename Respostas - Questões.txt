@@ -1,0 +1,37 @@
+Questões:
+
+1. Explique o que são os princípios SOLID e como cada um deles pode ser aplicado em um projeto desenvolvido em .NET.
+2. Quais são os principais padrões de arquitetura de software utilizados em aplicações .NET? Descreva dois desses padrões e seus benefícios.
+3. Por que é importante separar a lógica de negócios da lógica de apresentação em uma aplicação .NET? Como isso pode ser alcançado?
+
+Respostas:
+
+1. O SOLID é uma sigla que representa 5 princípios de boas práticas para desenvolvimento de software. 
+O "S" é o princípio da responsabilidade única, ele traz que uma classe deve ter apenas uma única responsabilidade, por exemplo: Uma classe de 
+modelagem de entidade deve conter apenas a modelagem e não conter um método de CRUD  como ExcluirEntidade() por exemplo. 
+A letra "O"´é o princípio do aberto/fechado e ele traz que devemo ser capazes de estender as funcionalidades de uma classe sem modificar ela, por
+exemplo: Você quer enviar um texto normalmente e um texto criptografado, a maneira errada seria vc verificar se ele é normal ou criptografado usando
+if else e tudo no mesmo método Enviar. Seguindo o Princípio aberto//fechado deveriamos criar uma classe base chamada Texto com um método abstract 
+Enviar e sobreescrevermos ele nas classes TextoNormal e TextoCriptografado que herdarão de Texto.
+A letra "L" é o princípio de substituição de Liskov, ele traz uma contextualização para o uso da herança dizendo que os subtipos devem ser 
+substituíveis pelo tipo base, ou seja devemos estudar bem os subtipos antes de agrupá-los em um tipo base.
+A letra "I" é a segragação de interfaces e diz que muitas interfaces específicas são melhores que uma interface geral. No caso devemos criar uma
+interface que servirá de base para interfaces mais específicas, assim criando classes mais enxutas e de manutenção mas fácil.
+A letra "D" é o princípio da inversão de dependência que diz que devemos depender mais de abstrações e não de implementações. No caso eu acredito
+que se refere a utilização de interfaces que ajudam a desacoplar as camadas do sistema e facilitar o desenvolvimento reutilizando código.
+
+2. Primeiro o padrão da Arquitetura em Camadas que trás a abordagem de separar o sistema em camadas distintas, cada camada tem sua função 
+específica. Exemplo: Lógica, apresentação e acesso a dados. Trás os benefícios de: Facilita a manutenção do código pois as camadas tem
+funções definidas o que ajuda no desenvolvimento e verificação de bugs, rejtilização de código pois a lógica pode ser usada em várias partes da 
+aplicação e facilita a criação de testes automatizados devido a separação das camadas.
+Também temos o padrão de microsserviços que consiste em dividir o sistema em serviços menores e independentes cada um com sua funcionalidade específica,
+esses serviços muitas vezes são api's que se comunicam. Trás vários benefícios mas o principal na minha opinião é que essa arquitetura trás uma 
+facilidade em escalaramos cada microsserviço separadamente de forma independente. Trás também mais confiabilidade para o sistema pois um erro em um
+microsserviço geralmente não compromete o sistema todo (pelomenos não deveria kkkkkkk).
+
+3. É importante separar a lógica de negócios da lógica de aplicação pois fácilita todas as áreas do desenvolvimento do software, facilita a manutenção
+do código e evolução do mesmo pois uma mudança em um lugar não impacta no outro diretamente, facilita a reutilização da lógica em várias plataformas
+como é o caso do .NET MAUI por exemplo que se eu não me engano podemos utilizar a lógica do aplicativo para desenvolver app web e desktop por exemplo.
+Podemos alcançar usando o padrão MVC separando a modelagem da apresentação dos dados e da interação entre ambos. Sendo M = Model =  Lógica de Negócios
+& V = View = Apresentação & C = Controller = processamento dos dados do usuário e interação de lógica e view. Podemos usar também injeção de dependências
+para separar a responsabilidade do código e injetar as classes em outras para utilizarmos seus métodos de maneira organizada.
